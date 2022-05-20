@@ -34,6 +34,29 @@
             return MYAPP.calculator.left + MYAPP.calculator.right;
         }
         document.write(sum());
+        
+         var MYAPP = {}
+        MYAPP.calculator = {
+            'left' : null,
+            'right' : null
+        }
+        MYAPP.coordinate = {
+            'left' : null,
+            'right' : null
+        }
+        
+        MYAPP.calculator.left = 10;
+        MYAPP.calculator.right = 20;
+        function sum(){
+            return MYAPP.calculator.left + MYAPP.calculator.right;
+        }
+        document.write(sum());
+
+        //System.out.println(name) = console.log(name)
+        for(var i = 0; i < 1; i++){
+            var name = 'coding everybody';
+        }
+        alert(name);    //변수의 유효 범휘
     </script>
 </body>
 </html>
