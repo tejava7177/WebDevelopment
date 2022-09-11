@@ -90,24 +90,39 @@
         }
     </style>
 
-<script>
-    // let count = 1;
-    // function hey() {
-    //     if (count % 2 == 0) {
-    //         alert('짝짝짝👏');
-    //     } else {
-    //         alert('홀홀홀🎅');
-    //     }
-    //     count += 1;
-    // }
+    <script>
+        // let count = 1;
+        // function hey() {
+        //     if (count % 2 == 0) {
+        //         alert('짝짝짝👏');
+        //     } else {
+        //         alert('홀홀홀🎅');
+        //     }
+        //     count += 1;
+        // }
 
-    function open_box(){
-        $('#post-box').show()
-    }
-    function close_box(){
-        $('#post-box').hide()
-    }
-</script>
+        $.ajax({
+            type: "GET",
+            url: "http://spartacodingclub.shop/sparta_api/seoulair",
+            data: {},
+            success: function (response) {
+                let rows = response['RealtimeCityAir']['row']
+                for(let i = 0; i < rows.length; i++){
+                    let gu_name = rows[i]['MSRSTE_NM']
+                    let gu_mise = rows[i]['IDEX_MVL']
+                    console.log(gu_name, gu_mise)
+                }
+            }
+        })
+
+
+        function open_box() {
+            $('#post-box').show()
+        }
+        function close_box() {
+            $('#post-box').hide()
+        }
+    </script>
 
 
 </head>
